@@ -4,6 +4,7 @@ const INITIAL_STATE = {
   expenses: [],
   editor: false,
   idToEdit: 0,
+  currentId: 0,
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
@@ -12,6 +13,12 @@ const wallet = (state = INITIAL_STATE, action) => {
     return ({
       ...state,
       expenses: [...state.expenses, action.expense],
+      currentId: state.currentId + 1,
+    });
+  case 'FETCH_CURRENCIES':
+    return ({
+      ...state,
+      currencies: action.data,
     });
 
   default:
