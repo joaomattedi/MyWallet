@@ -33,7 +33,7 @@ class WalletForm extends Component {
       value: '',
       description: '',
     });
-    addExpense({ ...sendState, currentId });
+    addExpense({ ...sendState, id: currentId });
   }
 
   render() {
