@@ -36,6 +36,18 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       expenses: action.expenses,
     });
+  case 'EDIT_EXPENSES':
+    return ({
+      ...state,
+      expenses: action.newExpenses,
+      editor: false,
+    });
+
+  case 'EDITOR_TRUE':
+    return ({
+      ...state,
+      editor: true,
+    });
 
   default:
     return state;

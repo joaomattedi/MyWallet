@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DeleteButton from './DeleteButton';
+import EditButton from './EditButton';
 
 class Table extends Component {
   render() {
@@ -32,6 +33,7 @@ class Table extends Component {
                 }
               </td>
               <td>
+                <EditButton id={ element.id } />
                 <DeleteButton id={ element.id } />
               </td>
             </tr>

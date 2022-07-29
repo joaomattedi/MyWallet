@@ -1,7 +1,9 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { addExpenseAction, fetchCurrenciesAction } from '../redux/actions';
+import {
+  addExpenseAction, editExpenseAction, fetchCurrenciesAction,
+} from '../redux/actions';
 
 class WalletForm extends Component {
   constructor() {
@@ -36,8 +38,18 @@ class WalletForm extends Component {
     addExpense({ ...sendState, id: currentId });
   }
 
+  handleEdit = () => {
+    const sendState = this.state;
+    const { editExpense, expenses, idToEdit } = this.props;
+    this.setState({
+      value: '',
+      description: '',
+    });
+    editExpense({ ...sendState, id: idToEdit }, expenses);
+  }
+
   render() {
-    const { currencies } = this.props;
+    const { currencies, editing } = this.props;
     const { value, description } = this.state;
     return (
       <div>
@@ -102,12 +114,22 @@ class WalletForm extends Component {
             <option value="Saúde">Saúde</option>
           </select>
         </label>
-        <button
-          type="button"
-          onClick={ this.handleClick }
-        >
-          Adicionar despesa
-        </button>
+        {!editing ? (
+          <button
+            type="button"
+            onClick={ this.handleClick }
+          >
+            Adicionar despesa
+          </button>
+        ) : (
+          <button
+            type="button"
+            onClick={ this.handleEdit }
+          >
+            Editar despesa
+          </button>
+        )}
+
       </div>
     );
   }
@@ -121,12 +143,16 @@ WalletForm.propTypes = {
 
 const mapStateToProps = ({ wallet }) => ({
   currencies: wallet.currencies,
+  expenses: wallet.expenses,
+  idToEdit: wallet.idToEdit,
   currentId: wallet.currentId,
+  editing: wallet.editor,
 });
 
 const mapDispatchToProps = (dispatch) => ({
   getCurrencies: () => dispatch(fetchCurrenciesAction()),
   addExpense: (expense) => dispatch(addExpenseAction(expense)),
+  editExpense: (expense, expenses) => dispatch(editExpenseAction(expense, expenses)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(WalletForm);
