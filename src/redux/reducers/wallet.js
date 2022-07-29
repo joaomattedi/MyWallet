@@ -5,6 +5,17 @@ const INITIAL_STATE = {
   editor: false,
   idToEdit: 0,
   currentId: 0,
+  columnsValue: [
+    'Valor',
+    'Tag',
+    'Descrição',
+    'Moeda',
+    'Método de pagamento',
+    'Câmbio utilizado',
+    'Moeda de conversão',
+    'Valor convertido',
+    'Editar/Excluir',
+  ],
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
