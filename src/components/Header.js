@@ -12,7 +12,7 @@ class Header extends Component {
           {expenses.reduce((acc, { value, currency, exchangeRates }) => {
             const sum = Number(value) * exchangeRates[currency].ask;
             return (Number(acc) + sum).toFixed(2);
-          }, 0)}
+          }, '0.00')}
         </p>
         <p data-testid="header-currency-field">BRL</p>
       </div>

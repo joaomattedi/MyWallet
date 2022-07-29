@@ -21,3 +21,11 @@ export const addExpenseAction = (expense) => async (dispatch) => {
     expense: { ...expense, exchangeRates: data },
   });
 };
+
+export const deleteExpenseAction = (id, expenses) => (dispatch) => {
+  const newExpenses = expenses.filter(({ id: elementId }) => id !== elementId);
+  dispatch({
+    type: 'DEL_EXPENSE',
+    expenses: newExpenses,
+  });
+};

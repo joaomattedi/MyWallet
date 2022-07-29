@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import DeleteButton from './DeleteButton';
 
 class Table extends Component {
   render() {
@@ -30,7 +31,9 @@ class Table extends Component {
                     .toFixed(2)
                 }
               </td>
-              <td>BUTTON</td>
+              <td>
+                <DeleteButton id={ element.id } />
+              </td>
             </tr>
           ))}
         </tbody>
