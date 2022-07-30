@@ -8,7 +8,8 @@ export const userAction = (email) => ({
 
 export const fetchCurrenciesAction = () => async (dispatch) => {
   const response = await fetch(API);
-  const data = Object.keys(await response.json()).filter((element) => element !== 'USDT');
+  const dataAPI = await response.json();
+  const data = Object.keys(dataAPI).filter((element) => element !== 'USDT');
   dispatch({
     type: 'FETCH_CURRENCIES',
     data,
