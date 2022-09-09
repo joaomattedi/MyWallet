@@ -2,6 +2,9 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import { connect } from 'react-redux';
 import { userAction } from '../redux/actions';
+import '../styles/Login.css';
+import myWallet from '../images/myWallet.png';
+import walletPic from '../images/walletPic.jpg';
 
 class Login extends React.Component {
   constructor() {
@@ -41,27 +44,43 @@ class Login extends React.Component {
   render() {
     const { isInvalid } = this.state;
     return (
-      <div>
-        <h2>MY WALLET</h2>
-        <input
-          data-testid="email-input"
-          type="text"
-          name="email"
-          onChange={ this.handleChange }
-        />
-        <input
-          data-testid="password-input"
-          name="password"
-          onChange={ this.handleChange }
-          type="text"
-        />
-        <button
-          type="button"
-          disabled={ isInvalid }
-          onClick={ this.handleClick }
-        >
-          Entrar
-        </button>
+      <div className="mainContainer">
+        <div className="imageContainer">
+          <img src={ walletPic } alt="walletImage" className="walletImage" />
+        </div>
+        <div className="formContainer">
+          <img src={ myWallet } alt="MyWallet Logo" className="logoImage" />
+          <form>
+            <label htmlFor="email">
+              <input
+                data-testid="email-input"
+                type="text"
+                name="email"
+                id="email"
+                placeholder="email"
+                onChange={ this.handleChange }
+              />
+            </label>
+            <label htmlFor="password">
+              <input
+                data-testid="password-input"
+                id="password"
+                name="password"
+                onChange={ this.handleChange }
+                placeholder="password"
+                type="password"
+              />
+            </label>
+            <button
+              type="button"
+              disabled={ isInvalid }
+              onClick={ this.handleClick }
+              className="loginBtn"
+            >
+              Entrar
+            </button>
+          </form>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,88 @@
+/* stylelint-disable custom-property-empty-line-before */
+
+/* stylelint-disable selector-max-specificity */
+:root {
+  --quartz: #ede7e3;
+  --blue: #62899b;
+  --hoverblue: #194463;
+  --lightblue: #e0f5fa;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Bebas Neue, cursive;
+  margin: 0;
+  padding: 0;
+}
+
+.mainContainer {
+  display: flex;
+}
+
+.imageContainer {
+  align-items: center;
+  background-color: var(--lightblue);
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0 30px 60px -30px, rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 50vw;
+}
+
+.walletImage {
+  width: 50%;
+}
+
+.logoImage {
+  width: 250px;
+}
+
+.formContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50vw;
+}
+
+.formContainer form {
+  display: flex;
+  flex-direction: column;
+  height: 13em;
+  justify-content: space-around;
+  padding-top: 25px;
+}
+
+.formContainer input {
+  border: 0;
+  border-bottom: 1px solid rgba(128, 128, 128, 0.452);
+  border-radius: 5px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0 7px 29px 0;
+  letter-spacing: 2px;
+  padding: 15px;
+  width: 15em;
+}
+
+.formContainer input::placeholder {
+  font-family: Bebas Neue, cursive;
+  letter-spacing: 2px;
+}
+
+.formContainer button {
+  background-color: var(--blue);
+  border: 0;
+  border-radius: 5px;
+  letter-spacing: 2px;
+  padding: 10px;
+}
+
+.formContainer button:hover {
+  background-color: var(--hoverblue);
+  letter-spacing: 2px;
+}
+
+.formContainer button:disabled {
+  background-color: #e0f5fa;
+  letter-spacing: 2px;
+}
