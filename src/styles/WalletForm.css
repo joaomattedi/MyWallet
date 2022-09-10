@@ -1,0 +1,58 @@
+/* stylelint-disable selector-list-comma-space-after */
+.walletForm {
+  align-items: center;
+  background-color: var(--lightblue);
+  box-shadow: rgba(50, 50, 93, 0.25) 0 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0 30px 60px -30px,rgba(10, 37, 64, 0.35) 0 -2px 6px 0 inset;
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1em 0;
+}
+
+.walletForm label {
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.walletForm input , .walletForm select {
+  background: white;
+  border: 1px solid rgba(0, 0, 0, 0.11);
+  border-radius: 7px;
+  height: 26px;
+  margin-left: 7px;
+  padding: 0.3em 0.5em;
+  width: 130px;
+}
+
+.walletForm input::-webkit-outer-spin-button ,
+.walletForm input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+.walletForm input:hover {
+  border: 1px solid black;
+}
+
+.walletForm select {
+  appearance: none;
+  background-color: white;
+  background-image: url('../images/caret-down-light.svg');
+  background-position: 110px center;
+  background-repeat: no-repeat;
+  background-size: 10%;
+}
+
+.walletForm input:focus-visible , .walletForm select:focus-visible {
+  background: white;
+  outline: 0;
+}
+
+.walletForm button {
+  background-color: var(--hoverblue);
+  border: 0;
+  border-radius: 5px;
+  color: var(--quartz);
+  letter-spacing: 1px;
+  padding: 0.3em 0.6em;
+}

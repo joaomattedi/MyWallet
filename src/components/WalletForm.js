@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import {
   addExpenseAction, editExpenseAction, fetchCurrenciesAction,
 } from '../redux/actions';
+import '../styles/WalletForm.css';
 
 class WalletForm extends Component {
   constructor() {
@@ -52,18 +53,20 @@ class WalletForm extends Component {
     const { currencies, editing } = this.props;
     const { value, description } = this.state;
     return (
-      <div>
+      <form className="walletForm">
         <label htmlFor="value">
+          Valor:
           <input
             data-testid="value-input"
             id="value"
             name="value"
             onChange={ this.handleChange }
             value={ value }
-            type="text"
+            type="number"
           />
         </label>
         <label htmlFor="description">
+          Descrição:
           <input
             data-testid="description-input"
             id="description"
@@ -130,7 +133,7 @@ class WalletForm extends Component {
           </button>
         )}
 
-      </div>
+      </form>
     );
   }
 }
