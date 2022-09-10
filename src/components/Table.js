@@ -3,12 +3,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import DeleteButton from './DeleteButton';
 import EditButton from './EditButton';
+import '../styles/Table.css';
 
 class Table extends Component {
   render() {
     const { columns, expenses } = this.props;
     return (
-      <table>
+      <table className="expensesTable">
         <thead>
           <tr>
             {columns.map((element) => (

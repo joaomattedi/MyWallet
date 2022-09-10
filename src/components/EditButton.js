@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { editorAction } from '../redux/actions';
+import editIcon from '../images/note-pencil-light.svg';
+import '../styles/EditButton.css';
 
 class EditButton extends Component {
   render() {
@@ -11,8 +13,12 @@ class EditButton extends Component {
         type="button"
         data-testid="edit-btn"
         onClick={ () => edit(id) }
+        className="editButton"
       >
-        Editar
+        <img
+          src={ editIcon }
+          alt="Edit field"
+        />
       </button>
     );
   }

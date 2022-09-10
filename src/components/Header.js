@@ -19,7 +19,7 @@ class Header extends Component {
           </p>
           <p data-testid="header-currency-field">BRL</p>
         </div>
-        <h3 data-testid="email-field">{`Usuário: ${email || 'joao@joao.com'}`}</h3>
+        <h3 data-testid="email-field">{`Usuário: ${email}`}</h3>
       </header>
     );
   }

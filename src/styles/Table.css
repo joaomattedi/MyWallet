@@ -1,0 +1,32 @@
+.expensesTable {
+  border-spacing: 0;
+  font-size: 1.3em;
+  letter-spacing: 1px;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.expensesTable thead tr {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0;
+}
+
+.expensesTable thead tr th {
+  background-color: var(--hoverblue);
+  color: var(--quartz);
+  padding: 10px 15px;
+}
+
+.expensesTable tbody tr {
+  box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0;
+}
+
+.expensesTable tbody tr:nth-child( even ) {
+  background-color: var(--quartz);
+  box-shadow: rgba(0, 0, 0, 0.15) 0 5px 15px 0;
+}
+
+.expensesTable tbody tr td {
+  font-size: 0.8em;
+  padding: 5px 10px;
+  text-align: center;
+}

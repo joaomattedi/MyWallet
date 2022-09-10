@@ -1,0 +1,10 @@
+.editButton {
+  appearance: none;
+  background-color: rgba(255, 255, 255, 0);
+  border: 0;
+}
+
+.editButton img {
+  cursor: pointer;
+  width: 2.5em;
+}

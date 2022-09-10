@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { deleteExpenseAction } from '../redux/actions';
+import deleteIcon from '../images/trash-light.svg';
+import '../styles/DeleteButton.css';
 
 class DeleteButton extends Component {
   render() {
@@ -11,8 +13,12 @@ class DeleteButton extends Component {
         data-testid="delete-btn"
         type="button"
         onClick={ () => delExpense(id, expenses) }
+        className="deleteButton"
       >
-        Delete
+        <img
+          src={ deleteIcon }
+          alt="Delete field"
+        />
       </button>
     );
   }
